@@ -30,9 +30,18 @@ done
 #SRX424826: GSM1304777: hs_proerythroblast_1; Homo sapiens; RNA-Seq SRR1106084
 #SRX424852: GSM1304803: mm_orthochromatic_3; Mus musculus; RNA-Seq SRR1106110
 
-for((i=6084;i<=6110;i++));
-do /data/yudonglin/software/ena-fast-download/ena-fast-download.py SRR110${i};
+#for((i=6084;i<=6110;i++));
+#do /data/yudonglin/software/ena-fast-download/ena-fast-download.py SRR110${i};
+#done
+
+for((i=84;i<=99;i++));
+do fastq-dump --gzip SRR11060${i};
 done
+
+for((i=0;i<=9;i++));
+do fastq-dump --gzip SRR110610${i};
+done
+fastq-dump --gzip SRR1106110
 
 
 
